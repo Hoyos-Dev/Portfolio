@@ -1,10 +1,19 @@
+.container {
+  width: 100%;
+  height: 200vh; /* Doble altura para las dos secciones */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 .web-component {
   width: 100%;
   height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(to right, #1C1C1C 50%, #29272A 50%);
+  background-color: #1C1C1C;
   position: relative;
 
   // TEXTO PORTFOLIO
@@ -41,13 +50,14 @@
   // BOTONES INICIO
 
   .buttons-container {
-    position: absolute;
+    position: fixed; /* Cambiado a fixed para que permanezcan visibles */
     right: 50px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 20px;
+    z-index: 100; /* Asegura que estén por encima de otros elementos */
   }
 
   .nav-button {
@@ -72,4 +82,114 @@
       transform: translateX(-5px);
     }
   }
+}
+
+// SEGUNDA SECCIÓN
+.second-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #29272A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.second-section {
+  padding: 80px 0;
+  background-image: url("/assets/fondoPrueba.png"); // ajusta según tu estructura
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+    }
+  }
+
+  .image-container {
+    flex: 1;
+    max-width: 500px;
+    
+    .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background-color: #e9ecef;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      
+      &::before {
+        content: "Imagen";
+        color: #6c757d;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      
+      @media (max-width: 768px) {
+        height: 300px;
+      }
+    }
+  }
+  
+  .text-container {
+    flex: 1;
+    
+    .greeting-text {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    .lorem-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6c757d;
+      margin: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.text-container .btn-download {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #25E06D;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.text-container .btn-download:hover {
+  background-color: #1eb458;
 }
