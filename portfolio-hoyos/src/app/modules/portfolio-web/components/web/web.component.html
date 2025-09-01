@@ -14,17 +14,13 @@
       <div class="text-container">
         <h2 class="greeting-text">Hi, I'm Christian</h2>
         <p class="lorem-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
-          Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus
-          ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum
-          non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis
-          porttitor posuere. Praesent id metus massa, ut blandit odio.
+          Front-end developer focused on clean code, great user experiences, and continuous growth through emerging technologies. I create modern, scalable interfaces with strong attention to usability, performance, and design detail, adapting quickly to new tools and frameworks to deliver impactful solutions.
         </p>
 
         <!-- Botones debajo del texto -->
         <div class="buttons-section">
           <a href="./assets/Christian_Portfolio.pdf" class="btn-download" download>
-            Descargar Currículum
+            Download portfolio
           </a>
           <a href="https://github.com" target="_blank" class="social-button">
             <i class="fab fa-github"></i>
@@ -95,13 +91,47 @@
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
+  </section>
 
-    <div class="carousel-dots">
-      <span *ngFor="let project of projects; let i = index" 
-            [class.active]="currentProjectIndex === i"
-            (click)="goToProject(i)">
-      </span>
+  <!-- Statistics Section -->
+  <section class="statistics-section">
+    <div class="statistics-container">
+      <div class="stat-item">
+        <div class="stat-number">+1</div>
+        <div class="stat-label">Year of Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+26</div>
+        <div class="stat-label">Courses Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+1</div>
+        <div class="stat-label">Degree</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+1</div>
+        <div class="stat-label">Postgraduate</div>
+      </div>
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2>Christian Hoyos Salazar</h2>
+        <p>Frontend Developer</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Christian Hoyos. All rights reserved.</p>
+    </div>
+  </footer>
 </div>

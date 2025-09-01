@@ -20,8 +20,8 @@ export class WebComponent implements OnInit {
   projects: Project[] = [
     {
       type: 'FULLSTACK',
-      title: 'Elementos UI',
-      description: 'Un portal de componentes que funciona como una biblioteca digital, donde se almacenan y organizan elementos reutilizables de diseño y desarrollo web para asegurar coherencia y eficiencia en los proyectos.',
+      title: 'UI Elements',
+      description: 'A component portal that works as a digital library, centralizing reusable web design and development elements. It helps maintain consistency, speeds up workflows, and supports scalable and efficient project development.',
       frontendUrl: '#',
       backendUrl: '#',
       technologies: ['Angular', 'FastApi', 'MySQL'],
@@ -29,20 +29,12 @@ export class WebComponent implements OnInit {
     },
     {
       type: 'FULLSTACK',
-      title: 'Sorteos',
-      description: 'Una plataforma de sorteos personalizable que permite crear dinámicas a partir de listas de personas, con opciones de sorteos simultáneos o individuales, fondos personalizados e interactividad adaptable a cualquier necesidad.',
+      title: 'Giveaways',
+      description: 'A customizable sweepstakes platform that allows you to create dynamic sweepstakes from lists of people, with simultaneous or individual sweepstakes options, custom backgrounds, and interactivity adaptable to any need.',
       frontendUrl: '#',
       backendUrl: '#',
-      technologies: ['React', 'Node.js', 'Express'],
+      technologies: ['Angular', 'FastApi', 'MySQL'],
       imageUrl: 'assets/Proyecto2.png'
-    },
-    {
-      type: 'FRONTEND',
-      title: 'Project Three',
-      description: 'Descripción del tercer proyecto.',
-      frontendUrl: '#',
-      technologies: ['Vue.js', 'TailwindCSS'],
-      imageUrl: 'assets/placeholder-project.png'  // Asegúrate de tener esta imagen en la carpeta assets
     }
   ];
 
