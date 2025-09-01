@@ -4,28 +4,6 @@
       <h1 class="port-text">PORT</h1>
       <h1 class="folio-text">FOLIO<span class="green-dot">.</span></h1>
     </div>
-    <div class="buttons-container">
-      <div class="button-wrapper">
-        <a href="https://twitter.com" target="_blank" class="nav-button">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
-      <div class="button-wrapper">
-        <a href="https://github.com" target="_blank" class="nav-button">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <div class="button-wrapper">
-        <a href="https://discord.com" target="_blank" class="nav-button">
-          <i class="fab fa-discord"></i>
-        </a>
-      </div>
-      <div class="button-wrapper">
-        <a href="https://wa.me/1234567890" target="_blank" class="nav-button">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </div>
-    </div>
   </section>
 
   <section id="section2" class="second-section">
@@ -43,10 +21,18 @@
           porttitor posuere. Praesent id metus massa, ut blandit odio.
         </p>
 
-        <!-- Botón debajo del texto -->
-        <a href="./assets/Christian_Portfolio.pdf" class="btn-download" download>
-          Descargar Currículum
-        </a>
+        <!-- Botones debajo del texto -->
+        <div class="buttons-section">
+          <a href="./assets/Christian_Portfolio.pdf" class="btn-download" download>
+            Descargar Currículum
+          </a>
+          <a href="https://github.com" target="_blank" class="social-button">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-button">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -69,6 +55,52 @@
         <i class="devicon-fastapi-plain tech-icon"></i>
         <i class="devicon-linux-plain tech-icon"></i>
       </div>
+    </div>
+  </section>
+
+  <section id="section3" class="third-section">
+    <div class="carousel-container">
+      <button class="carousel-arrow prev" (click)="prevProject()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="carousel-track">
+        <div class="project-card" *ngFor="let project of projects; let i = index" [class.active]="currentProjectIndex === i">
+          <div class="project-info">
+            <h4>{{project.type}}</h4>
+            <h2>{{project.title}}</h2>
+            <p>{{project.description}}</p>
+            <div class="project-links">
+              <a *ngIf="project.frontendUrl" [href]="project.frontendUrl" class="btn-link" target="_blank">
+                <i class="fab fa-github"></i> Frontend
+              </a>
+              <a *ngIf="project.backendUrl" [href]="project.backendUrl" class="btn-link" target="_blank">
+                <i class="fab fa-github"></i> Backend
+              </a>
+            </div>
+            <div class="tech-tags">
+              <span *ngFor="let tech of project.technologies">{{tech}}</span>
+            </div>
+          </div>
+          <div class="project-image" *ngIf="project.imageUrl">
+            <img [src]="project.imageUrl" [alt]="'Proyecto ' + project.title">
+          </div>
+          <div class="project-image-placeholder" *ngIf="!project.imageUrl">
+            <!-- Espacio para la imagen del proyecto -->
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-arrow next" (click)="nextProject()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="carousel-dots">
+      <span *ngFor="let project of projects; let i = index" 
+            [class.active]="currentProjectIndex === i"
+            (click)="goToProject(i)">
+      </span>
     </div>
   </section>
 
