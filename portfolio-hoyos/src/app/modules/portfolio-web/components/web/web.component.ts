@@ -16,7 +16,7 @@ export class WebComponent implements OnInit {
       if (section2) {
         section2.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 1000); //Tiempo vista dos
+    }, 2000); //Tiempo vista dos
   }
 
 }
