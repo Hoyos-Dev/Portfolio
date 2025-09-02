@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PortfolioWebRoutingModule } from './portfolio-web-routing.module';
 import { OrquestadorComponent } from './pages/orquestador/orquestador.component';
@@ -12,6 +13,8 @@ import { WebComponent } from './components/web/web.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     PortfolioWebRoutingModule
   ]
 })
