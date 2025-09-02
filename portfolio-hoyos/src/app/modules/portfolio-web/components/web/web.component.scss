@@ -506,6 +506,7 @@
 /* Collage Section */
 .collage-section {
   padding: 20px 20px 40px;
+  margin-bottom: 60px;
   background-color: #ffffff;
   
   .collage-grid {
@@ -616,7 +617,7 @@
       .error-message {
         color: #ff4d4f;
         font-size: 0.85rem;
-        margin-top: 10px;
+        margin: 25px 0 10px;
         padding: 10px 15px;
         background-color: rgba(255, 77, 79, 0.1);
         border-radius: 4px;
@@ -631,7 +632,7 @@
       .success-message {
         color: #52c41a;
         font-size: 0.9rem;
-        margin-top: 15px;
+        margin: 40px 0 10px;
         padding: 10px 15px;
         background-color: rgba(82, 196, 26, 0.1);
         border-radius: 4px;
@@ -661,7 +662,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       width: 100%;
-      margin-top: 10px;
+      margin: 10px 0 30px 0;
       overflow: hidden;
       
       .spinner {
@@ -715,14 +716,8 @@
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      }
+      border: none;
+      border-radius: 0;
     }
   }
   
@@ -749,11 +744,12 @@
 
 /* Footer Styles */
 .site-footer {
-  background-color: #29272a;
+  background-color: #1c1c1c;
   color: #ffffff;
-  padding: 30px 0 15px;
+  padding: 30px 0 0;
   font-family: 'Poppins', sans-serif;
-  margin-top: 40px;
+  margin-top: 0;
+  overflow: hidden;
 
   .footer-content {
     max-width: 1200px;
