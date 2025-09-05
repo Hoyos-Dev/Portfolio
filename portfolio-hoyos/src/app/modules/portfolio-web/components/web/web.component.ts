@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
@@ -23,8 +23,9 @@ interface Project {
   templateUrl: './web.component.html',
   styleUrls: ['./web.component.scss']
 })
-export class WebComponent implements OnInit {
+export class WebComponent implements OnInit, OnDestroy {
   currentProjectIndex = 0;
+  private carouselInterval: any;
   
   contactData: ContactData = {
     name: '',
@@ -50,6 +51,13 @@ export class WebComponent implements OnInit {
       backendUrl: 'https://github.com/Hoyos-Dev/Sorteos/tree/main/Sorteos-main/Back-end',
       technologies: ['Angular', 'FastApi', 'MySQL'],
       imageUrl: 'assets/Proyecto2.png'
+    },
+    {
+      type: 'FRONT-END',
+      title: 'Portal PUA',
+      description: 'Refactorización visual y funcional de portal PAU. Por temas de privacidad no se puede compartir más información de este proyecto.',
+      technologies: [],
+      imageUrl: 'assets/pau.png'
     }
   ];
 
@@ -64,12 +72,29 @@ export class WebComponent implements OnInit {
 
   ngOnInit(): void {
     this.goToProject(0);
+    this.startCarouselAutoplay();
     setTimeout(() => {
       const section2 = document.getElementById('section2');
       if (section2) {
         section2.scrollIntoView({ behavior: 'smooth' });
       }
     }, 2000); //Tiempo vista dos
+  }
+
+  ngOnDestroy(): void {
+    this.stopCarouselAutoplay();
+  }
+
+  startCarouselAutoplay(): void {
+    this.carouselInterval = setInterval(() => {
+      this.nextProject();
+    }, 5000); // Cambiar cada 5 segundos
+  }
+
+  stopCarouselAutoplay(): void {
+    if (this.carouselInterval) {
+      clearInterval(this.carouselInterval);
+    }
   }
 
   async onSubmit(form: NgForm) {
@@ -110,10 +135,17 @@ export class WebComponent implements OnInit {
 
   nextProject(): void {
     this.currentProjectIndex = (this.currentProjectIndex + 1) % this.projects.length;
+    this.resetCarouselAutoplay();
   }
 
   prevProject(): void {
     this.currentProjectIndex = (this.currentProjectIndex - 1 + this.projects.length) % this.projects.length;
+    this.resetCarouselAutoplay();
+  }
+
+  resetCarouselAutoplay(): void {
+    this.stopCarouselAutoplay();
+    this.startCarouselAutoplay();
   }
 
   goToProject(index: number): void {
